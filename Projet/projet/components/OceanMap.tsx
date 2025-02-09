@@ -91,9 +91,9 @@ const OceanMap = () => {
             "coordinates": [[[45, 15], [50, 15], [50, 20], [45, 20], [45, 15]]]
           },
           "properties": {
-            "name": "Triangle des Bermudes",
+            "name": "Mer Rouge",
             "color": "#FF4500",
-            "description": "Le Triangle des Bermudes est une région connue pour les disparitions mystérieuses de navires et d'avions."
+            "description": "Mer chaude et peu profonde, la Mer Rouge est célèbre pour ses récifs coralliens et sa biodiversité marine."
           }
         },
         {

@@ -17,15 +17,15 @@ const Hero = () => {
     <div className="hero">
       <div className="flex-1 pt-36 padding-x">
         <h1 className="hero__title">
-          All you want to know about the oceans
+          Animaux marins en voie d'extinction
         </h1>
 
         <p className="hero__subtitle">
-          Dive into the ocean and explore the wonders of the deep blue sea.
+          Approfondisser vos connaissances sur les espèces marines en danger.
         </p>
 
         <CustomButton
-          title="Explore Animals"
+          title="Explore le monde aquatique"
           containerStyles="bg-primary-blue text-white rounded-full mt-10"
           handleClick={handleScroll}
         />

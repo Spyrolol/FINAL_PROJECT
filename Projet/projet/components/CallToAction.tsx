@@ -109,12 +109,7 @@ const CallToAction = () => {
           animate={{ scale: 1 }}
           transition={{ duration: 0.5, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" }}
         >
-          <CustomButton
-            title="Explorer Maintenant"
-            btnType="button"
-            containerStyles="text-white font-semibold text-lg rounded-full bg-green-500 px-6 py-3 hover:bg-green-700 shadow-lg transition-all duration-300 transform hover:scale-105"
-            onClick={handleExploreNowClick} // Ajout du gestionnaire d'événements
-          />
+         
         </motion.div>
       </div>
     </section>
