@@ -20,7 +20,7 @@ export default function Home() {
 
       <div className="mt-12 padding-x padding-y max-width relative z-10" id="discover">
         <div className="home__text-container">
-          <h1 className="text-4xl font-extrabold">Découvrez l'océan</h1>
+          <h1 className="text-4xl font-extrabold text-white">Découvrez l'océan</h1>
           <p className="home__subtitle">
             Plongez dans l'océan et explorez les merveilles des profondeurs.
           </p>

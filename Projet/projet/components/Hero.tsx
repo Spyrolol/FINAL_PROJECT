@@ -20,7 +20,7 @@ const Hero = () => {
           Animaux marins en voie d'extinction
         </h1>
 
-        <p className="hero__subtitle">
+        <p className=" text-white">
           Approfondisser vos connaissances sur les espèces marines en danger.
         </p>
 
