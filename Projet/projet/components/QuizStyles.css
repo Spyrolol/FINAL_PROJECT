@@ -1,0 +1,52 @@
+/* QuizStyles.css */
+.quiz-container {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .result-container {
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 1s ease-in;
+  }
+  
+  .result-container.fade-in {
+    opacity: 1;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  
+  ul li {
+    margin: 5px 0;
+  }
+  
+  /* Ajouter cette règle CSS */
+  input[type="text"] {
+    color: black; /* Texte en noir */
+    border: 1px solid #ccc; /* Bordure grise */
+    padding: 8px;
+    width: 200px;
+    border-radius: 4px;
+  }
+  
+  input[type="text"]:focus {
+    border-color: #007BFF; /* Bordure bleue quand le champ est en focus */
+    outline: none; /* Enlever le contour par défaut */
+  }
+  
