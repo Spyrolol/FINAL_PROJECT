@@ -1,192 +1,51 @@
 'use client';
 
-import React, { Component } from 'react';
-import './QuizStyles.css'; // Assurez-vous de lier le fichier CSS dans votre projet
+import React, { useState } from 'react';
+import './QuizStyles.css'; // Assurez-vous d'inclure votre fichier CSS
 
-class FishExtinctionQuiz extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      name: '',
-      question1: '',
-      question2: '',
-      question3: '',
-      question4: '',
-      result: '',
-      showAnswers: false,
-    };
-  }
+const FishExtinctionInfo = () => {
+  const [showInfo, setShowInfo] = useState(false);
 
-  handleChange = (event) => {
-    const { name, value } = event.target;
-    this.setState({ [name]: value });
+  const handleToggleInfo = () => {
+    setShowInfo(!showInfo);
   };
 
-  handleSubmit = (event) => {
-    event.preventDefault();
-    const { question1, question2, question3, question4 } = this.state;
+  return (
+    <div className="info-container">
+      <h2 className="title">Les poissons en voie d'extinction</h2>
+      <p className="intro">
+        Les poissons en voie d'extinction souffrent de la pêche excessive, de la pollution et du réchauffement climatique.
+        Certaines espèces emblématiques, comme le thon rouge et le saumon, sont en danger.
+      </p>
 
-    let score = 0;
-    if (question1 === 'A') score++;
-    if (question2 === 'B') score++;
-    if (question3 === 'A') score++;
-    if (question4 === 'C') score++;
+      <button className="info-toggle-btn" onClick={handleToggleInfo}>
+        {showInfo ? 'Masquer les détails' : 'Voir plus de détails'}
+      </button>
 
-    let resultMessage = '';
-    if (score === 4) {
-      resultMessage = 'Vous êtes un expert en poissons en voie d\'extinction!';
-    } else if (score >= 2) {
-      resultMessage = 'Vous avez une bonne connaissance sur les poissons en voie d\'extinction.';
-    } else {
-      resultMessage = 'Vous avez encore beaucoup à apprendre!';
-    }
+      {showInfo && (
+        <div className="details fade-in">
+          <h3 className="subtitle">Causes principales de l'extinction</h3>
+          <ul className="causes-list">
+            <li><span className="cause">Pollution de l'eau :</span> Perturbation des habitats naturels.</li>
+            <li><span className="cause">Pêche illégale :</span> Épuisement des stocks de poissons.</li>
+            <li><span className="cause">Réchauffement climatique :</span> Modifications des écosystèmes marins.</li>
+          </ul>
 
-    this.setState({ result: resultMessage, showAnswers: true });
-  };
+          <h3 className="subtitle">Solutions pour la préservation</h3>
+          <ul className="solutions-list">
+            <li><span className="solution">Pêche durable :</span> Adoption de pratiques de pêche respectueuses des écosystèmes.</li>
+            <li><span className="solution">Réduire la pollution :</span> Limiter les déchets plastiques et chimiques dans les océans.</li>
+            <li><span className="solution">Réserves marines :</span> Création d'espaces protégés pour préserver la biodiversité marine.</li>
+            <li><span className="solution">Initiatives locales :</span> Restauration des habitats marins dégradés.</li>
+          </ul>
 
-  render() {
-    return (
-      <div className="quiz-container">
-        <h2>Questionnaire sur les poissons en voie d'extinction</h2>
-        <form onSubmit={this.handleSubmit}>
-          <label>
-            Nom:
-            <input
-              type="text"
-              name="name"
-              value={this.state.name}
-              onChange={this.handleChange}
-              required
-            />
-          </label>
-          <br />
+          <p className="closing-text">
+            En adoptant ces solutions, nous pouvons inverser la tendance et protéger la vie marine pour les générations futures.
+          </p>
+        </div>
+      )}
+    </div>
+  );
+};
 
-          <label>
-            1. Quel est l'une des principales causes de l'extinction des poissons?
-            <br />
-            <input
-              type="radio"
-              name="question1"
-              value="A"
-              onChange={this.handleChange}
-            /> Pollution de l'eau
-            <br />
-            <input
-              type="radio"
-              name="question1"
-              value="B"
-              onChange={this.handleChange}
-            /> Pêche durable
-            <br />
-            <input
-              type="radio"
-              name="question1"
-              value="C"
-              onChange={this.handleChange}
-            /> Réduction de la température de l'eau
-          </label>
-          <br />
-
-          <label>
-            2. Quelle est l'espèce de poisson la plus en danger?
-            <br />
-            <input
-              type="radio"
-              name="question2"
-              value="A"
-              onChange={this.handleChange}
-            /> Thon rouge
-            <br />
-            <input
-              type="radio"
-              name="question2"
-              value="B"
-              onChange={this.handleChange}
-            /> Poisson-clown
-            <br />
-            <input
-              type="radio"
-              name="question2"
-              value="C"
-              onChange={this.handleChange}
-            /> Saumon
-          </label>
-          <br />
-
-          <label>
-            3. Quelle organisation se consacre à la préservation des poissons en voie d'extinction?
-            <br />
-            <input
-              type="radio"
-              name="question3"
-              value="A"
-              onChange={this.handleChange}
-            /> WWF
-            <br />
-            <input
-              type="radio"
-              name="question3"
-              value="B"
-              onChange={this.handleChange}
-            /> Greenpeace
-            <br />
-            <input
-              type="radio"
-              name="question3"
-              value="C"
-              onChange={this.handleChange}
-            /> Sea Shepherd
-          </label>
-          <br />
-
-          <label>
-            4. Quelle est une solution pour protéger les poissons en voie d'extinction?
-            <br />
-            <input
-              type="radio"
-              name="question4"
-              value="A"
-              onChange={this.handleChange}
-            /> Interdire la pêche
-            <br />
-            <input
-              type="radio"
-              name="question4"
-              value="B"
-              onChange={this.handleChange}
-            /> Augmenter la pêche
-            <br />
-            <input
-              type="radio"
-              name="question4"
-              value="C"
-              onChange={this.handleChange}
-            /> Création de réserves marines protégées
-          </label>
-          <br />
-
-          <button type="submit">Soumettre</button>
-        </form>
-
-        {this.state.result && (
-          <div className="result-container fade-in">
-            <h3>{this.state.result}</h3>
-            {this.state.showAnswers && (
-              <div>
-                <h4>Réponses correctes :</h4>
-                <ul>
-                  <li>1. A: Pollution de l'eau</li>
-                  <li>2. B: Poisson-clown</li>
-                  <li>3. A: WWF</li>
-                  <li>4. C: Création de réserves marines protégées</li>
-                </ul>
-              </div>
-            )}
-          </div>
-        )}
-      </div>
-    );
-  }
-}
-
-export default FishExtinctionQuiz;
+export default FishExtinctionInfo;

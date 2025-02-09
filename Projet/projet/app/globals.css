@@ -347,4 +347,100 @@ ul {
 ul li {
   margin: 5px 0;
 }
+/* Fichier QuizStyles.css */
+
+/* Style général */
+.info-container {
+  background-color: #f0f8ff;
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 700px;
+  margin: 40px auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+.title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2e8b57;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.intro {
+  font-size: 18px;
+  color: #333;
+  line-height: 1.6;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.info-toggle-btn {
+  background-color: #32cd32;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  transition: background-color 0.3s ease;
+}
+
+.info-toggle-btn:hover {
+  background-color: #28a745;
+}
+
+/* Effet fade-in pour les détails */
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.details {
+  margin-top: 20px;
+}
+
+.subtitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: #4b0082;
+  margin-top: 20px;
+}
+
+.causes-list, .solutions-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.causes-list li, .solutions-list li {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.cause, .solution {
+  font-weight: bold;
+  color: #2e8b57;
+}
+
+.closing-text {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+  margin-top: 20px;
+  text-align: center;
+}
 
